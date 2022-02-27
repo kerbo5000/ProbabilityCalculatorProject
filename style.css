@@ -1,0 +1,230 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+header{
+  display: flex;
+  height: 9vh;
+  width: 100%;
+  background-color: white;
+  justify-content:space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  padding: 10px 5%;
+}
+header img{
+  height: 40px;
+}
+header h1{
+  font-size: 1.8em;
+  padding-left:10px;
+  color: #174D99;
+}
+
+header nav{
+  flex: 1;
+  text-align: right;
+}
+
+header nav ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 0px 10px;
+  position: relative;
+}
+
+header nav ul li::after{
+  content: '';
+  width: 0%;
+  height: 1px;
+  background: #D3A518;
+  display: block;
+  margin: auto;
+  transition: 0.4s;
+}
+
+header nav ul li:hover::after{
+  width: 100%
+}
+
+header nav ul li a{
+  text-decoration: none;
+  color: #174D99;
+  font-weight:600;
+  font-size: 1.1em;
+}
+
+.buttons{
+  display: inline-block;
+  padding:10px 15px;
+  border: 3px solid  #D3A518;
+  font-weight: 600;
+  text-decoration: none;
+  color: #5B7DD0;
+  margin: 10px 60px;
+  font-size: 1em;
+  background: #E8EFFF;
+  border-radius: 15px;
+}
+.buttons:hover{
+  background: #174D99;
+  cursor: pointer;
+  color: #E8EFFF;
+}
+
+#home{
+  background-image: linear-gradient(rgba(23,77,153,0.7),rgba(23,77,153,0.7)), url(images/background_3.png);
+  background-position: center;
+  background-size: cover;
+  padding-top:15em;
+  padding-bottom: 13em;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+#home span{
+  display: block;
+  font-size: .8em;;
+  font-weight: 200;
+  padding-top: 5px;
+}
+
+#home h1{
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#random_variables{
+  width:90%;
+  margin: 0 auto;
+  padding:10vh 0;
+  color: rgba(13,57,123,0.9);
+}
+
+#random_variables p{
+  font-weight:400;
+  font-size: 1.3em;
+  line-height: 1.5;
+  text-align: justify;
+}
+#random_variables h1{
+  font-size: 2em;
+  padding-bottom: 10px;
+  color: #D3A518;
+}
+.intro img{
+  float:right;
+  margin-left: 20px;
+  width: 400px;
+}
+.row{
+  display: flex;
+  margin-top: 50px;
+  justify-content:space-around;
+}
+.rand-var{
+  flex-basis: 48%;
+  padding: 0 20px;
+  border: 3px solid #D3A518;
+  position:relative;
+  background: #E8EFFF;
+  margin-top: 20px;
+}
+.rand-var h3{
+  font-size: 1.5em;
+  font-weight: bolder;
+  position: absolute;
+  top:-20px;
+  background: linear-gradient(white,#E8EFFF);
+}
+.rand-var p{
+  padding-top: 20px;
+}
+.distributions{
+  background-image: linear-gradient(rgba(23,77,153,0.8),rgba(23,77,153,0.8)),url(images/dist3.jpg);
+  background-position: center;
+  background-size: cover;
+  color: white;
+  position: relative;
+  padding: 10vh 5% 70px;
+  margin-bottom: 30px;
+}
+
+.distributions h1{
+  font-size: 2em;
+  padding-bottom: 10px;
+  color: #D3A518;
+}
+.distributions h3{
+  padding-bottom: 10px;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+.distributions::after{
+  content: '';
+  width: 100vw;
+  height: 9vh;
+  background: white;
+  display: block;
+  position: absolute;
+  bottom: -6vh;
+  left:0;
+}
+
+.distri-links{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 0px;
+  justify-content: center;
+}
+.distribution{
+  flex-basis: 31%;
+  text-align: center;
+  border-radius: 10px;
+  margin: 5px;
+  position: relative;
+}
+.distribution::before{
+  content: '';
+  width: 100%;
+  height:2px;
+  background: #D3A518;
+  display: block;
+  margin: auto;
+}
+.distribution::after{
+  content: '';
+  width: 50%;
+  height:2px;
+  background-color: #D3A518;
+  display: block;
+  margin: auto;
+}
+.distribution h4{
+  font-size: 1.2em;
+  padding: 15px 0 10px;
+  color: white;
+}
+.distribution p{
+  font-size: .9em;
+  font-weight: 200;
+}
+#sub-home{
+  background-image: linear-gradient(rgba(23,77,153,0.7),rgba(23,77,153,0.7)), url(images/sub3.jpg);
+  background-position: center;
+  background-size: cover;
+  padding-top:12em;
+  padding-bottom: 9em;
+  color: white;
+  position: relative;
+  text-align: center;
+}
+
+#sub-home h1{
+  font-size: 2em;
+
+}
