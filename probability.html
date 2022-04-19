@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>probability</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">'\'
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -23,25 +23,27 @@
     </nav>
   </header>
   <section id="home">
-      <h1>All the named probability distributions in one place<span>Find the probability at any point of your random variable including the mean and variance</span></h1>
+      <h1>All the named probability distributions in one place<span>Find the probability at any value of your random variable including the mean and variance</span></h1>
       <a href="#" class="buttons">Pick a distribution</a>
   </section>
-  <section id="random_variables">
-    <div class="intro">
-      <img src="images/rv3.png">
-      <h1>Random variables</h1>
-      <p>A random variable, usually written X, is a variable whose possible values are numerical outcomes of a random phenomenon. There are two types of random variables, discrete and continuous.</p>
+  <section >
+    <div id="random_variables">
+      <div class="intro">
+        <img src="images/rv3.png">
+        <h1>Random variables</h1>
+        <p>A random variable, usually written X, is a variable whose possible values are numerical outcomes of a random phenomenon. There are two types of random variables, discrete and continuous.</p>
+      </div>
+      <div class="row">
+        <div class="rand-var">
+          <h3>Discrete random variables</h3>
+          <p>A discrete random variable is one which may take on only a countable number of distinct values such as 0,1,2,3,4,... Discrete random variables are usually counts. If a random variable can take only a finite number of distinct values, then it must be discrete. Examples of discrete random variables include the number of patients in a doctor's surgery, the number of defective light bulbs in a box of ten.</p>
+        </div>
+        <div class="rand-var">
+          <h3>Continuous random variables</h3>
+          <p>A continuous random variable is one which takes an infinite number of possible values. Continuous random variables are usually measurements. Examples include height, weight, the amount of sugar in an orange, the time required to run a mile. A continuous random variable is not defined at specific values. Instead, it is defined over an interval of values, and is represented by the area under a curve. The probability of observing any single value is equal to 0, since the number of values which may be assumed by the random variable is infinite.</p>
+        </div>
+      <div>
     </div>
-    <div class="row">
-      <div class="rand-var">
-        <h3>Discrete random variables</h3>
-        <p>A discrete random variable is one which may take on only a countable number of distinct values such as 0,1,2,3,4,... Discrete random variables are usually counts. If a random variable can take only a finite number of distinct values, then it must be discrete. Examples of discrete random variables include the number of patients in a doctor's surgery, the number of defective light bulbs in a box of ten.</p>
-      </div>
-      <div class="rand-var">
-        <h3>Continuous random variables</h3>
-        <p>A continuous random variable is one which takes an infinite number of possible values. Continuous random variables are usually measurements. Examples include height, weight, the amount of sugar in an orange, the time required to run a mile. A continuous random variable is not defined at specific values. Instead, it is defined over an interval of values, and is represented by the area under a curve. The probability of observing any single value is equal to 0, since the number of values which may be assumed by the random variable is infinite.</p>
-      </div>
-    <div>
   </section>
   <section class="distributions" id="discrete">
     <h1>Discrete distributions</h1>
@@ -49,12 +51,12 @@
       <div class="distribution">
           <h4>Binomial</h4>
           <p>The binomial distribution is used to model the number of successes in a sample of size n.</p>
-          <a href="#" class="buttons">Get started</a>
+          <a href="/binomial.html" class="buttons">Get started</a>
       </div>
       <div class="distribution">
           <h4>Geometric</h4>
           <p>The geometric distribution is used to model the number of failures before the first success.</p>
-          <a href="#" class="buttons">Get started</a>
+          <a href="/geometric.html" class="buttons">Get started</a>
       </div>
       <div class="distribution">
           <h4>Hypergeometric</h4>
