@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>probability</title>
-  <link rel="stylesheet" href="styleDiscrete.css">
+  <link rel="stylesheet" href="../styleDiscrete.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
   <header>
@@ -15,46 +17,45 @@
     <h1>Probability Calculator</h1>
     <nav>
       <ul>
-        <li><a href="/probability.html#home">home</a></li>
-        <li><a href="/probability.html#random_variables">random variables</a></li>
-        <li><a href="/probability.html#discrete">discrete</a></li>
-        <li><a href="/probability.html#continuous">continuous</a></li>
+        <li><a href="../probability.html#home">home</a></li>
+        <li><a href="../probability.html#random_variables">random variables</a></li>
+        <li><a href="../probability.html#discrete">discrete</a></li>
+        <li><a href="../probability.html#continuous">continuous</a></li>
       </ul>
     </nav>
   </header>
   <section id="home">
-      <h1>Binomial</h1>
+      <h1>Normal</h1>
   </section>
   <section>
     <div id="distribution">
       <div id="info">
         <h1>Information</h1>
-        <p>The binomial distribution is used to model the number of successes in a sample of size n.</p>
+        <p>The normal distribution is a probability function that describes how the values of a variable are distributed.</p>
         <div id="mass-function">
           <h2>Probability mass function</h2>
-          <h3>P<sub>x</sub> = C<sup>n</sup><sub>x</sub>p<sup>x</sup>q<sup>n-x</sup></h3>
-            <p> x = number of times for a specific outcome within n trials<br>
-                p = probability of success on a single trial<br>
-                q = probability of failure on a single trial<br>
-                n = number of trials<br>
-            </p>
+          <h3>\(P_x = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}\)</h3>
+          <p> \(\mu\) : the expected value<br>
+              \(\sigma\) : the standard deviation<br>
+          </p>
         </div>
       </div>
       <div id="input">
         <h1>Input values</h1>
-        <form>
-          <input type="number" placeholder="number of trials">
-          <input type="number" placeholder="probability of success">
+        <div>
+          <input type="number" placeholder="x value">
+          <input type="number" placeholder="expected value">
+          <input type="number" placeholder="standard deviation">
           <input type="submit">
-        </form>
+        </div>
         <div id="results">
           <h2>Results</h2>
           <table>
             <tr>
-              <td>mean (np) : </td>
+              <td>mean \(\mu\) : </td>
             </tr>
             <tr>
-              <td>variance (npq) : </td>
+              <td>variance \(\sigma^2\) : </td>
             </tr>
             <tr>
               <td>P(X = x) : </td>

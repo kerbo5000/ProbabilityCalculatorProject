@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>probability</title>
-  <link rel="stylesheet" href="styleDiscrete.css">
+  <link rel="stylesheet" href="../styleDiscrete.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
   <header>
@@ -15,45 +17,46 @@
     <h1>Probability Calculator</h1>
     <nav>
       <ul>
-        <li><a href="/probability.html#home">home</a></li>
-        <li><a href="/probability.html#random_variables">random variables</a></li>
-        <li><a href="/probability.html#discrete">discrete</a></li>
-        <li><a href="/probability.html#continuous">continuous</a></li>
+        <li><a href="../probability.html#home">home</a></li>
+        <li><a href="../probability.html#random_variables">random variables</a></li>
+        <li><a href="../probability.html#discrete">discrete</a></li>
+        <li><a href="../probability.html#continuous">continuous</a></li>
       </ul>
     </nav>
   </header>
   <section id="home">
-      <h1>Geometric</h1>
+      <h1>Chi-square</h1>
   </section>
   <section>
     <div id="distribution">
       <div id="info">
         <h1>Information</h1>
-        <p>The geometric distribution is used to model the number of failures before the first success.</p>
+        <p>The chi-square distribution is used in the common chi-square tests for goodness of fit, the independence of two criteria of classification of qualitative data, and in confidence interval estimation.</p>
         <div id="mass-function">
           <h2>Probability mass function</h2>
-          <h3>P<sub>x</sub> = pq<sup>x-1</sup></h3>
-            <p> x = number of trials needed for one success<br>
-                p = probability of success on a single trial<br>
-                q = probability of failure on a single trial<br>
-            </p>
+          <h3>\(P_x = {n \choose x}p^x(1-p)^{n-x}\)</h3>
+          <p> \(x\) : number of times for a specific outcome within n trials<br>
+              \(p\) : probability of success on a single trial<br>
+              \(n\) : number of trials<br>
+          </p>
         </div>
       </div>
       <div id="input">
         <h1>Input values</h1>
-        <form>
+        <div>
+          <input type="number" placeholder="x value">
           <input type="number" placeholder="number of trials">
           <input type="number" placeholder="probability of success">
           <input type="submit">
-        </form>
+        </div>
         <div id="results">
           <h2>Results</h2>
           <table>
             <tr>
-              <td>mean (np) : </td>
+              <td>mean \(np\) : </td>
             </tr>
             <tr>
-              <td>variance (npq) : </td>
+              <td>variance \(np(1-p)\) : </td>
             </tr>
             <tr>
               <td>P(X = x) : </td>
