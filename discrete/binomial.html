@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>probability</title>
-  <link rel="stylesheet" href="../styleDiscrete.css">
+  <link rel="stylesheet" href="../styleDistribution.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -13,7 +13,7 @@
 </head>
 <body>
   <header>
-    <img src="images/logo_3.jpg">
+    <img src="../images/logo_3.jpg">
     <h1>Probability Calculator</h1>
     <nav>
       <ul>
@@ -44,25 +44,25 @@
       <div id="input">
         <h1>Input values</h1>
         <div>
-          <input type="number" placeholder="x value">
-          <input type="number" placeholder="number of trials">
-          <input type="number" placeholder="probability of success">
-          <input type="submit">
+          <input id="x-value" type="number" placeholder="x value">
+          <input id="n-value" type="number" placeholder="number of trials">
+          <input id="p-value" type="number" placeholder="probability of success">
+          <input id="values-submit"type="submit">
         </div>
         <div id="results">
           <h2>Results</h2>
           <table>
-            <tr>
+            <tr id="mean">
               <td>mean \(np\) : </td>
             </tr>
-            <tr>
+            <tr id="variance">
               <td>variance \(np(1-p)\) : </td>
             </tr>
-            <tr>
-              <td>P(X = x) : </td>
+            <tr id="pmf">
+              <td >P(X = x) : </td>
             </tr>
-            <tr>
-              <td>P(X &#8804; x) :</td>
+            <tr id="cdf">
+              <td >P(X &#8804; x) :</td>
             </tr>
           </table>
         </div>
@@ -70,4 +70,5 @@
     </div>
   </section>
 </body>
+<script src="computation.js"></script>
 </html>
