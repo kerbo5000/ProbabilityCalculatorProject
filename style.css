@@ -6,67 +6,126 @@
 }
 header{
   display: flex;
-  height: 9vh;
+  height: 10vh;
   width: 100%;
   background-color: white;
   justify-content:space-between;
   align-items: center;
   position: fixed;
   z-index: 1;
-  top: 0;
-  padding: 10px 5%;
+  /* top: 0; */
+  padding: 1.5em 3em;
 }
 header img{
-  height: 40px;
+  height: 3em;
+  margin: 0 .7em;
 }
 header h1{
   font-size: 1.8em;
-  padding-left:10px;
+  /* padding-left:10px; */
   color: #174D99;
 }
+header .fa-solid{
+  display:none;
+}
+#title-logo{
+  display: flex;
+  align-items: center;
+}
 
-header nav{
+nav{
   flex: 1;
   text-align: right;
 }
 
-header nav ul li{
+nav ul li{
   list-style: none;
   display: inline-block;
-  padding: 0px 10px;
-  position: relative;
+  padding: 0.8em 0.7em;
+  /* position: relative; */
 }
 
-header nav ul li::after{
+nav ul li::after{
   content: '';
   width: 0%;
-  height: 1px;
+  height: .125em;
   background: #D3A518;
   display: block;
   margin: auto;
   transition: 0.4s;
 }
 
-header nav ul li:hover::after{
+nav ul li:hover::after{
   width: 100%
 }
 
-header nav ul li a{
+nav ul li a{
   text-decoration: none;
   color: #174D99;
   font-weight:600;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
+@media (max-width: 900px) {
+  header{
+    padding: 1.5em 1.5em;
+  }
+  header img{
+    height: 3em;
+    margin: 0 .5em;
+  }
+  header h1{
+    font-size: 1.4em;
+  }
+  header .fa-solid{
+    display: block;
+    color:#174D99;
+    margin:1.5em;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  nav {
+    position:absolute;
+    background: #5B7DD0;
+    height: 100vh;
+    width: 15em;
+    top:0;
+    right: -15em;
+    text-align: left;
+    z-index: 2;
+    transition: 1s;
+  }
+  nav ul{
+    padding: 1.5em;
+  }
+  nav ul li{
+    display: block;
+  }
+  nav ul li a{
+    color:white;
+    font-size: 1.4em;
+  }
+  nav .fa-solid{
+    color:white;
+  }
+}
+@media (max-width: 450px) {
+  header h1{
+    font-size: 1.2em;
+  }
+  header img{
+    height: 2em;
+  }
+}
 .buttons{
   display: inline-block;
-  padding:10px 15px;
-  border: 3px solid  #D3A518;
+  padding:0.6em 0.8em;
+  border: .250em solid  #D3A518;
   font-weight: 600;
   text-decoration: none;
   color: #5B7DD0;
-  margin: 10px 60px;
-  font-size: 1em;
+  margin: 0.3em 0;
+  font-size: 1.2em;
   background: #E8EFFF;
   border-radius: 15px;
 }
@@ -82,57 +141,78 @@ header nav ul li a{
   background-size: cover;
   padding-top:15em;
   padding-bottom: 13em;
-  color: white;
-  position: relative;
   text-align: center;
+  height: 94vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#home div{
+  width: 95%;
+}
+#home h1{
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 2em;
+  color: white;
 }
 #home span{
   display: block;
   font-size: .8em;;
   font-weight: 200;
-  padding-top: 5px;
+  padding-top: .2em;
 }
 
-#home h1{
-  margin-bottom: 20px;
-  font-weight: bold;
+@media (max-width: 550px) {
+  #home h1{
+    font-size: 1.7em;
+  }
+  #home span{
+    font-size: .8em;
+  }
 }
 
 #random_variables{
   width:90%;
-  margin: 0 auto;
-  padding:10vh 0;
+  margin: 3em auto;
+  /* padding:10vh 0; */
   color: rgba(13,57,123,0.9);
-}
 
+}
+#random_variables h1{
+  font-size: 2em;
+  padding-bottom: .5em;
+  color: #D3A518;
+}
 #random_variables p{
   font-weight:400;
   font-size: 1.3em;
   line-height: 1.5;
   text-align: justify;
 }
-#random_variables h1{
-  font-size: 2em;
-  padding-bottom: 10px;
-  color: #D3A518;
+#intro{
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
-.intro img{
-  float:right;
-  margin-left: 20px;
-  width: 400px;
+#intro img{
+  /* float:right; */
+  margin: 1.2em 1.7em;
+  height: 11em;
 }
 .row{
+  width: 100%;
   display: flex;
-  margin-top: 50px;
-  justify-content:space-around;
+  margin-top: 3.5em;
+  justify-content:space-between;
 }
 .rand-var{
   flex-basis: 48%;
-  padding: 0 20px;
+  padding: 0 1.7em;
   border: 3px solid #D3A518;
   position:relative;
   background: #E8EFFF;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 .rand-var h3{
   font-size: 1.5em;
@@ -142,56 +222,63 @@ header nav ul li a{
   background: linear-gradient(white,#E8EFFF);
 }
 .rand-var p{
-  padding-top: 20px;
+  margin: 1.4em 0;
 }
+@media (max-width: 900px) {
+  #intro{
+    flex-direction: column;
+  }
+  .row{
+    flex-direction:column;
+    margin-top: 2em;
+  }
+
+  .rand-var{
+    margin-bottom: 2em;
+  }
+}
+
 .distributions{
   background-image: linear-gradient(rgba(23,77,153,0.8),rgba(23,77,153,0.8)),url(images/dist3.jpg);
   background-position: center;
   background-size: cover;
   color: white;
   position: relative;
-  padding: 12vh 5% 70px;
-  margin-bottom: 30px;
+  padding:3em 4em;
 }
 
 .distributions h1{
   font-size: 2em;
-  padding-bottom: 10px;
   color: #D3A518;
 }
-.distributions h3{
-  padding-bottom: 10px;
-  font-size: 1.5em;
-  font-weight: bolder;
-}
+
 .distributions::after{
   content: '';
   width: 100%;
-  height: 9vh;
+  height: 3em;
   background: white;
   display: block;
   position: absolute;
-  bottom: -6vh;
+  bottom: 0px;
   left:0;
 }
 
 .distri-links{
   display: flex;
   flex-wrap: wrap;
-  padding: 30px 0px;
+  padding: 2em 0;
   justify-content: center;
 }
 .distribution{
   flex-basis: 31%;
   text-align: center;
-  border-radius: 10px;
-  margin: 5px;
+  margin: .3em;
   position: relative;
 }
 .distribution::before{
   content: '';
   width: 100%;
-  height:2px;
+  height:.125em;
   background: #D3A518;
   display: block;
   margin: auto;
@@ -199,32 +286,49 @@ header nav ul li a{
 .distribution::after{
   content: '';
   width: 50%;
-  height:2px;
+  height:.125em;
   background-color: #D3A518;
   display: block;
   margin: auto;
 }
 .distribution h4{
-  font-size: 1.2em;
-  padding: 15px 0 10px;
+  font-size: 1.3em;
+  padding: 0.7em 0;
   color: white;
 }
 .distribution p{
-  font-size: .9em;
-  font-weight: 200;
+  font-size: 1.1em;
+  font-weight: 300;
+  margin-bottom: .8em;
 }
-#sub-home{
-  background-image: linear-gradient(rgba(23,77,153,0.7),rgba(23,77,153,0.7)), url(images/sub3.jpg);
-  background-position: center;
-  background-size: cover;
-  padding-top:12em;
-  padding-bottom: 9em;
-  color: white;
-  position: relative;
-  text-align: center;
+@media (max-width: 900px) {
+  .distribution{
+    flex-basis: 45%;
+  }
 }
+@media (max-width: 600px) {
+  .distribution{
+    flex-basis: 45%;
+  }
+  /* .distributions::after{
+    content: '';
+    width: 100%;
+    height: 3em;
+    background: white;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left:0;
+  } */
+  .distribution h4{
+    font-size: 1.2em;
+  }
+  .distribution p{
+    font-size: 0.9em;
+  }
 
-#sub-home h1{
-  font-size: 2em;
+  .distribution .buttons{
+      font-size: .9em;
+  }
 
 }

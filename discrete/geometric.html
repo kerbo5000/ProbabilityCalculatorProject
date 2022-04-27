@@ -7,26 +7,29 @@
   <title>probability</title>
   <link rel="stylesheet" href="../styleDistribution.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
   <header>
-    <img src="../images/logo_3.jpg">
-    <h1>Probability Calculator</h1>
+    <div id="title-logo">
+      <img src="../images/logo_3.jpg">
+      <h1>Probability Calculator</h1>
+    </div>
     <nav>
+      <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
       <ul>
         <li><a href="../probability.html#home">home</a></li>
         <li><a href="../probability.html#random_variables">random variables</a></li>
         <li><a href="../probability.html#discrete">discrete</a></li>
-        <!--<li><a href="../probability.html#continuous">continuous</a></li>-->
+        <!--<li><a href="#continuous">continuous</a></li>-->
       </ul>
     </nav>
+    <i class="fa-solid fa-bars" onclick="showMenu()"></i>
   </header>
   <section id="home">
-      <h1 id="dist">Geometric</h1>
+    <h1 id="dist">Geometric</h1>
   </section>
   <section>
     <div id="distribution">
@@ -37,7 +40,7 @@
           <h2>Probability mass function</h2>
           <h3>\(P_x = p(1-p)^{(x-1)}\)</h3>
           <p> \(x\) : number of trials needed for one success<br>
-              \(p\) : probability of success on a single trial<br>
+            \(p\) : probability of success on a single trial<br>
           </p>
         </div>
       </div>
@@ -62,4 +65,14 @@
   </section>
 </body>
 <script src="computation.js"></script>
+<script src="https://kit.fontawesome.com/6a204534c0.js" crossorigin="anonymous"></script>
+<script>
+const nav = document.querySelector("nav");
+function showMenu(){
+  nav.style.right = "0";
+}
+function hideMenu(){
+  nav.style.right = "-15em";
+}
+</script>
 </html>

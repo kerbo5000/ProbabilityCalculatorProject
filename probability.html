@@ -6,14 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>probability</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">'\'
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link  rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <img src="images/logo_3.jpg">
-    <h1>Probability Calculator</h1>
+    <div id="title-logo">
+      <img src="/images/logo_3.jpg">
+      <h1>Probability Calculator</h1>
+    </div>
     <nav>
+      <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
       <ul>
         <li><a href="#home">home</a></li>
         <li><a href="#random_variables">random variables</a></li>
@@ -21,17 +24,22 @@
         <!--<li><a href="#continuous">continuous</a></li>-->
       </ul>
     </nav>
+    <i class="fa-solid fa-bars" onclick="showMenu()"></i>
   </header>
   <section id="home">
+    <div>
       <h1>All the named probability distributions in one place<span>Find the probability at any value of your random variable including the mean and variance</span></h1>
       <a href="#discrete" class="buttons">Pick a distribution</a>
+    </div>
   </section>
   <section >
     <div id="random_variables">
-      <div class="intro">
+      <div id="intro">
+        <div>
+          <h1>Random variables</h1>
+          <p>A random variable, usually written X, is a variable whose possible values are numerical outcomes of a random phenomenon. There are two types of random variables, discrete and continuous.</p>
+        </div>
         <img src="images/rv3.png">
-        <h1>Random variables</h1>
-        <p>A random variable, usually written X, is a variable whose possible values are numerical outcomes of a random phenomenon. There are two types of random variables, discrete and continuous.</p>
       </div>
       <div class="row">
         <div class="rand-var">
@@ -42,70 +50,82 @@
           <h3>Continuous random variables</h3>
           <p>A continuous random variable is one which takes an infinite number of possible values. Continuous random variables are usually measurements. Examples include height, weight, the amount of sugar in an orange, the time required to run a mile. A continuous random variable is not defined at specific values. Instead, it is defined over an interval of values, and is represented by the area under a curve. The probability of observing any single value is equal to 0, since the number of values which may be assumed by the random variable is infinite.</p>
         </div>
-      <div>
+        <div>
+        </div>
+      </section>
+      <section>
+        <div class="distributions" id="discrete">
+          <h1>Discrete distributions</h1>
+          <div class="distri-links">
+            <div class="distribution">
+              <h4>Binomial</h4>
+              <p>The binomial distribution is used to model the number of successes in a sample of size n.</p>
+              <a href="discrete/binomial.html" class="buttons">Get started</a>
+            </div>
+            <div class="distribution">
+              <h4>Geometric</h4>
+              <p>The geometric distribution is used to model the number of failures before the first success.</p>
+              <a href="discrete/geometric.html" class="buttons">Get started</a>
+            </div>
+            <div class="distribution">
+              <h4>Hypergeometric</h4>
+              <p>The hypergeometric distribution is used to model proportions of a given item in samples. </p>
+              <a href="discrete/hypergeometric.html" class="buttons">Get started</a>
+            </div>
+            <div class="distribution">
+              <h4>Poisson</h4>
+              <p>The poisson distribution is used to model the number of events occurring in a fixed interval of time or space if these events occur with a known constant mean rate.</p>
+              <a href="discrete/poisson.html" class="buttons">Get started</a>
+            </div>
+            <div class="distribution">
+              <h4>Negative Binomial</h4>
+              <p>The negative binomial distribution is used to model the number of trials in a sequence before a specified  number of successes occur.</p>
+              <a href="discrete/negativeBin.html" class="buttons">Get started</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--
+      <section class="distributions" id="continuous">
+      <h1>Continuous distributions</h1>
+      <div class="distri-links">
+      <div class="distribution">
+      <h4>Uniform</h4>
+      <p>The uniform distribution refers to a type of probability distribution in which all outcomes are equally likely.</p>
+      <a href="/continuous/uniform.html" class="buttons">Get started</a>
     </div>
-  </section>
-  <section class="distributions" id="discrete">
-    <h1>Discrete distributions</h1>
-    <div class="distri-links">
-      <div class="distribution">
-          <h4>Binomial</h4>
-          <p>The binomial distribution is used to model the number of successes in a sample of size n.</p>
-          <a href="discrete/binomial.html" class="buttons">Get started</a>
-      </div>
-      <div class="distribution">
-          <h4>Geometric</h4>
-          <p>The geometric distribution is used to model the number of failures before the first success.</p>
-          <a href="discrete/geometric.html" class="buttons">Get started</a>
-      </div>
-      <div class="distribution">
-          <h4>Hypergeometric</h4>
-          <p>The hypergeometric distribution is used to model proportions of a given item in samples. </p>
-          <a href="discrete/hypergeometric.html" class="buttons">Get started</a>
-      </div>
-      <div class="distribution">
-          <h4>Poisson</h4>
-          <p>The poisson distribution is used to model the number of events occurring in a fixed interval of time or space if these events occur with a known constant mean rate.</p>
-          <a href="discrete/poisson.html" class="buttons">Get started</a>
-      </div>
-      <div class="distribution">
-          <h4>Negative Binomial</h4>
-          <p>The negative binomial distribution is used to model the number of trials in a sequence before a specified  number of successes occur.</p>
-          <a href="discrete/negativeBin.html" class="buttons">Get started</a>
-      </div>
-    </div>
-  </section>
-  <!--
-  <section class="distributions" id="continuous">
-    <h1>Continuous distributions</h1>
-    <div class="distri-links">
-      <div class="distribution">
-          <h4>Uniform</h4>
-          <p>The uniform distribution refers to a type of probability distribution in which all outcomes are equally likely.</p>
-          <a href="/continuous/uniform.html" class="buttons">Get started</a>
-      </div>
-      <div class="distribution">
-          <h4>Normal</h4>
-          <p>The normal distribution is a probability function that describes how the values of a variable are distributed.</p>
-          <a href="/continuous/normal.html" class="buttons">Get started</a>
-      </div>
-      <div class="distribution">
-          <h4>Gamma</h4>
-          <p>The gamma distribution is a probability function that describes the wait time until future events.</p>
-          <a href="/continuous/gamma.html" class="buttons">Get started</a>
-      </div>
-      <div class="distribution">
-          <h4>Exponential</h4>
-          <p>The exponential distribution is a probability function of the time between events in a process in which events occur continuously and independently at a constant average rate.</p>
-          <a href="/continuous/exponential.html" class="buttons">Get started</a>
-      </div>
-      <div class="distribution">
-          <h4>Chi-square</h4>
-          <p>The chi-square distribution is used in the common chi-square tests for goodness of fit, the independence of two criteria of classification of qualitative data, and in confidence interval estimation.</p>
-          <a href="/continuous/chiSquare.html" class="buttons">Get started</a>
-      </div>
-    </div>
-  </section>
+    <div class="distribution">
+    <h4>Normal</h4>
+    <p>The normal distribution is a probability function that describes how the values of a variable are distributed.</p>
+    <a href="/continuous/normal.html" class="buttons">Get started</a>
+  </div>
+  <div class="distribution">
+  <h4>Gamma</h4>
+  <p>The gamma distribution is a probability function that describes the wait time until future events.</p>
+  <a href="/continuous/gamma.html" class="buttons">Get started</a>
+</div>
+<div class="distribution">
+<h4>Exponential</h4>
+<p>The exponential distribution is a probability function of the time between events in a process in which events occur continuously and independently at a constant average rate.</p>
+<a href="/continuous/exponential.html" class="buttons">Get started</a>
+</div>
+<div class="distribution">
+<h4>Chi-square</h4>
+<p>The chi-square distribution is used in the common chi-square tests for goodness of fit, the independence of two criteria of classification of qualitative data, and in confidence interval estimation.</p>
+<a href="/continuous/chiSquare.html" class="buttons">Get started</a>
+</div>
+</div>
+</section>
 -->
 </body>
+<script src="https://kit.fontawesome.com/6a204534c0.js" crossorigin="anonymous"></script>
+<script>
+const nav = document.querySelector("nav");
+function showMenu(){
+  nav.style.right = "0";
+}
+function hideMenu(){
+  nav.style.right = "-15em";
+}
+</script>
 </html>

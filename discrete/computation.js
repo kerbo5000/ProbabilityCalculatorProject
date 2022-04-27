@@ -9,10 +9,6 @@ const meanValue = document.createElement('span');
 const varianceValue = document.createElement('span');
 const pmfValue = document.createElement('span');
 const cdfValue = document.createElement('span');
-let setValues = false;
-// fetch("https://quickchart.io/chart?c={type:'bar',data:{labels:[2012,2013,2014,2015,2016],datasets:[{label:'Users',data:[120,60,50,180,120]}]}}")
-// .then((res)=> res.text()
-// ))
 submit.addEventListener("click",result);
 function result(e){
   e.preventDefault();
@@ -34,10 +30,13 @@ function result(e){
       poi();
       break;
   }
-  submit.parentElement.appendChild(message);
-  setTimeout(function(){
-     submit.parentElement.removeChild(message)
-   },3000)
+
+  if(message.innerText !=""){
+    submit.parentElement.appendChild(message);
+    setTimeout(function(){
+       submit.parentElement.removeChild(message)
+     },3000)
+  }
   mean.appendChild(meanValue);
   variance.appendChild(varianceValue);
   pmf.appendChild(pmfValue);
@@ -54,6 +53,7 @@ function cdfunc(x,func,s){
 }
 const fact = n => !(n>1) ? 1: fact(n-1)*n;
 const combi = (n,k) => (fact(n)/(fact(k)*fact(n-k)));
+const decimal = (n) => n.toFixed(1-Math.floor(Math.log(Math.abs(n))/Math.log(10)))
 
 function bin(){
   const x = Number(document.getElementById("x-value").value);
@@ -74,8 +74,8 @@ function bin(){
   meanValue.innerText = +((n*p).toFixed(3));
   varianceValue.innerText = +((n*p*(1-p)).toFixed(3));
   const pmfunc = (i) =>combi(n,i)*p**i*(1-p)**(n-i);
-  pmfValue.innerText = +(pmfunc(x).toFixed(3));
-  cdfValue.innerText= +(cdfunc(x,pmfunc,0).toFixed(3));
+  pmfValue.innerText = decimal(pmfunc(x));
+  cdfValue.innerText= decimal(cdfunc(x,pmfunc,0));
 }
 function geo(){
   const x = Number(document.getElementById("x-value").value);
@@ -91,8 +91,8 @@ function geo(){
   meanValue.innerText = +((1/p).toFixed(3));
   varianceValue.innerText = +(((1-p)/p**2).toFixed(3));
   const pmfunc = (i) => p*(1-p)**(i-1);
-  pmfValue.innerText = +(pmfunc(x).toFixed(3));
-  cdfValue.innerText= +(cdfunc(x,pmfunc,1).toFixed(3));
+  pmfValue.innerText = decimal(pmfunc(x));
+  cdfValue.innerText= decimal(cdfunc(x,pmfunc,1));
 }
 
 function hyp(){
@@ -104,7 +104,7 @@ function hyp(){
     message.innerText = "the value for N has to be a positive integer";
     return;
   }
-  if(!Number.isInteger(bigk)||bigK<= 0||bigK>bigN ){
+  if(!Number.isInteger(bigK)||bigK<= 0||bigK>bigN ){
     message.innerText = "the value for K has to be an integer between 1 and N";
     return;
   }
@@ -112,15 +112,15 @@ function hyp(){
     message.innerText = "the value for n has to be an integer between 1 and N";
     return;
   }
-  if(!Number.isInteger(x)||x< 0 || x > bigK ){
+  if(!Number.isInteger(x)||x< 0 || x > bigK || x > n){
     message.innerText = "the value for x has to be an integer between 0 and K";
     return;
   }
   meanValue.innerText = +((n*(bigK/bigN)).toFixed(3));
   varianceValue.innerText = +((n*(bigK/bigN)*((bigN-bigK)/bigN)*((bigN-n)/(bigN-1))).toFixed(3));
   const pmfunc =(i)=> (combi(bigK,i)*combi(bigN-bigK,n-i))/combi(bigN,n);
-  pmfValue.innerText = +(pmfunc(x).toFixed(3));
-  cdfValue.innerText= +(cdfunc(x,pmfunc,0).toFixed(3));
+  pmfValue.innerText = decimal(pmfunc(x));
+  cdfValue.innerText= decimal(cdfunc(x,pmfunc,0));
 }
 
 function neg(){
@@ -142,8 +142,8 @@ function neg(){
   meanValue.innerText = +((k/p).toFixed(3));
   varianceValue.innerText = +(((k*(1-p))/p**2).toFixed(3));
   const pmfunc = (i)=> combi(i-1,k-1)*(1-p)**(i-k)*p**k;
-  pmfValue.innerText = +(pmfunc(x).toFixed(3));
-  cdfValue.innerText= +(cdfunc(x,pmfunc,k).toFixed(3));
+  pmfValue.innerText = decimal(pmfunc(x));
+  cdfValue.innerText= decimal(cdfunc(x,pmfunc,k));
 }
 function poi(){
   const l = Number(document.getElementById("l-value").value);
@@ -159,6 +159,6 @@ function poi(){
   meanValue.innerText = +((l*1).toFixed(3));
   varianceValue.innerText = +((l*1).toFixed(3));
   const pmfunc = (i)=> (l**i*Math.exp(-l))/fact(i);
-  pmfValue.innerText = +(pmfunc(x).toFixed(3));;
-  cdfValue.innerText= +(cdfunc(x,pmfunc,0).toFixed(3));
+  pmfValue.innerText = decimal(pmfunc(x));;
+  cdfValue.innerText= decimal(cdfunc(x,pmfunc,0));
 }
