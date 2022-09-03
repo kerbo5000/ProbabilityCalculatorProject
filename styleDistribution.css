@@ -31,6 +31,7 @@ header .fa-solid{
 #title-logo{
   display: flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 nav{

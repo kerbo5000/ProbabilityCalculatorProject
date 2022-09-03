@@ -31,8 +31,13 @@ header .fa-solid{
 #title-logo{
   display: flex;
   align-items: center;
+  /* width:fit-content; */
+  /* flex:2 */
+  white-space: nowrap;
 }
-
+.blocker {
+  height: 10vh;
+}
 nav{
   flex: 1;
   text-align: right;
@@ -174,7 +179,9 @@ nav ul li a{
 
 #random_variables{
   width:90%;
-  margin: 3em auto;
+  padding-top: 5em; 
+  padding-bottom: 2em; 
+  margin: auto;
   /* padding:10vh 0; */
   color: rgba(13,57,123,0.9);
 
@@ -244,7 +251,7 @@ nav ul li a{
   background-size: cover;
   color: white;
   position: relative;
-  padding:3em 4em;
+  padding:7em 4em;
 }
 
 .distributions h1{
